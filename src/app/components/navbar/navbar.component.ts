@@ -1,4 +1,8 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../../services/auth.service';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
+import { User } from "@firebase/auth-types";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+    isLoggedIn: boolean;
+  loggedInUser: string;
+  currentUser$: Observable<User>;
+  currentUserEmail$: Observable<String>;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    // this.currentUser$ = this.authService.currentUser$;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate([`/login`]);
   }
 
 }
