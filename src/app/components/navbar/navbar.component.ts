@@ -11,7 +11,7 @@ import { User } from "@firebase/auth-types";
 })
 export class NavbarComponent implements OnInit {
 
-    isLoggedIn: boolean;
+  isLoggedIn: boolean;
   loggedInUser: string;
   currentUser$: Observable<User>;
   currentUserEmail$: Observable<String>;
@@ -23,6 +23,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     // this.currentUser$ = this.authService.currentUser$;
+  }
+
+  login() {
+    this.authService.signInWithGoogle();
   }
 
   logout() {
