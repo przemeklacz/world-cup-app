@@ -25,6 +25,7 @@ export class LocalDataService {
       matchesArray.push(groups[item].matches);
     }
     let flattenMatchesArray = matchesArray.reduce((acc, val) => acc.concat(val), []);
+
     flattenMatchesArray.sort(function (a, b) {
       if (a.name < b.name) {
         return -1;

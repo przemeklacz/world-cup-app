@@ -15,6 +15,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { MatchesListComponent } from './components/matches-list/matches-list.component';
+import { GetCountryByIdPipe } from './pipes/get-country-by-id.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatchesListComponent } from './components/matches-list/matches-list.com
     NavbarComponent,
     DashboardComponent,
     LoginComponent,
-    MatchesListComponent
+    MatchesListComponent,
+    GetCountryByIdPipe
   ],
   imports: [
     BrowserModule,
