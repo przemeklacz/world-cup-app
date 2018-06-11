@@ -13,13 +13,19 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { MatchesListComponent } from './components/matches-list/matches-list.component';
+import { GetCountryByIdPipe } from './pipes/get-country-by-id.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    MatchesListComponent,
+    GetCountryByIdPipe
   ],
   imports: [
     BrowserModule,

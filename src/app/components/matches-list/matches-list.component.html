@@ -1,0 +1,9 @@
+<div *ngFor="let match of matches">
+    <h2>Mecz numer: {{match.name}}</h2>
+    <h4>Data meczu: {{match.date | date:'short'}}</h4>
+  <p>
+    <span>{{match.home_team | getCountryById:true}}</span>
+    <span> - </span>
+    <span>{{match.away_team | getCountryById:false}}</span>
+  </p>
+</div>
