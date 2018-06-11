@@ -1,3 +1,4 @@
+import { MatchesListComponent } from './../matches-list/matches-list.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

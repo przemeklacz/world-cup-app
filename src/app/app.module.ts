@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
+import { MatchesListComponent } from './components/matches-list/matches-list.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     NavbarComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    MatchesListComponent
   ],
   imports: [
     BrowserModule,
