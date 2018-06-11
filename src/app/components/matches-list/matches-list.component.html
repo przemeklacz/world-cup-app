@@ -1,3 +1,9 @@
-<p>
-  matches-list works!
-</p>
+<div *ngFor="let match of matches">
+    <h2>Mecz numer: {{match.name}}</h2>
+    <h4>Data meczu: {{match.date | date:'short'}}</h4>
+  <p>
+    <span>{{match.home_team}}</span>
+    <span> - </span>
+    <span>{{match.away_team}}</span>
+  </p>
+</div>
