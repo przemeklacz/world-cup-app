@@ -1,9 +1,26 @@
-<div *ngFor="let match of matches">
-    <h2>Mecz numer: {{match.name}}</h2>
-    <h4>Data meczu: {{match.date | date:'short'}}</h4>
-  <p>
-    <span>{{match.home_team | getCountryById:true}}</span>
-    <span> - </span>
-    <span>{{match.away_team | getCountryById:false}}</span>
-  </p>
-</div>
+<mat-card *ngFor="let match of matches">
+  <mat-card-title>
+    {{match.name}}. Data meczu: {{match.date | date:'short'}}
+  </mat-card-title>
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <form [formGroup]="scoreForm" (ngSubmit)="submit($event, scoreForm.valid)">
+      <p>
+        <span>{{match.home_team | getCountryById:true}}</span>
+        <mat-form-field>
+          <input matInput formControlName="homeScore" type="number" required value="0">
+        </mat-form-field>
+        <span> - </span>
+        <mat-form-field>
+          <input matInput formControlName="awayScore" type="number" required value="0">
+        </mat-form-field>
+        <span>{{match.away_team | getCountryById:false}}</span>
+      </p>
+       <mat-form-field class="display-none">
+        <input matInput class="js-game-id" formControlName="gameId" type="number" required value="{{match.name}}">
+      </mat-form-field>
+      <button mat-button mat-raised-button type="submit">Zapisz</button>
+    </form>
+  </mat-card-actions>
+</mat-card>
