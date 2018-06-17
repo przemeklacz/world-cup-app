@@ -25,6 +25,11 @@ export class NavbarComponent implements OnInit {
     // this.currentUser$ = this.authService.currentUser$;
   }
 
+
+  login() {
+    this.authService.signInWithGoogle();
+  }
+
   logout() {
     this.authService.logout();
     this.router.navigate([`/login`]);

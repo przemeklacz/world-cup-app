@@ -12,6 +12,7 @@ export class AuthService {
 
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) { 
       this.user = _firebaseAuth.authState;
+      this.isLoggedIn();
   }
 
   signInWithGoogle() {
@@ -22,8 +23,9 @@ export class AuthService {
 
   isLoggedIn() {
     if (this.userDetails == null ) {
+      console.log(this);
       return false;
-    } else {
+    } else {console.log(this);
       return true;
     }
   }

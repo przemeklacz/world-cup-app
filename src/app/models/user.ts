@@ -1,4 +1,4 @@
-import { Prediction } from './prediction';
+import { Prediction } from './preditction';
 
 
 export interface User {

@@ -9,12 +9,8 @@
             <mat-icon>face</mat-icon>
             User
         </a>
-        <a routerLink="/manage-games" mat-menu-item>
-            <mat-icon>build</mat-icon>
-            Test
-        </a>
     </mat-menu>
-    <button *ngIf="!(currentUser$ | async)" mat-button routerLink="/login">Login</button>
+    <button *ngIf="!(currentUser$ | async)" mat-button (click)="login()">Login</button>
     <button *ngIf="currentUser$ | async" mat-button (click)="logout()">Logout</button>
     <button *ngIf="currentUser$ | async" mat-button routerLink="/user">{{(currentUser$ | async)?.email}}</button>
 </mat-toolbar>

@@ -16,6 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatchesListComponent } from './components/matches-list/matches-list.component';
 import { GetCountryByIdPipe } from './pipes/get-country-by-id.pipe';
+import { AngularFireDatabaseModule } from "angularfire2/database";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { GetCountryByIdPipe } from './pipes/get-country-by-id.pipe';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AngularFirestoreModule,
     MaterialModule,
     AppRoutingModule,
